@@ -1,0 +1,46 @@
+﻿@page "/exams.html"
+@model PortalApp.Pages.Exams.ExamListModel
+<!-- ================================
+    START BREADCRUMB AREA
+================================= -->
+<section class="breadcrumb-area section-padding img-bg-2">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="breadcrumb-content d-flex flex-wrap align-items-center justify-content-between">
+            <div class="section-heading">
+                <h2 class="section__title text-white">Getting Started!</h2>
+            </div>
+            <ul class="generic-list-item generic-list-item-white generic-list-item-arrow d-flex flex-wrap align-items-center">
+                <li><a href="/">Home</a></li>
+                <li>Exams</li>
+            </ul>
+        </div><!-- end breadcrumb-content -->
+    </div><!-- end container -->
+</section><!-- end breadcrumb-area -->
+<!-- ================================
+    END BREADCRUMB AREA
+================================= -->
+<!--======================================
+        START COURSE AREA
+======================================-->
+<section class="course-area section--padding">
+    <div class="container">
+        <div class="filter-bar mb-4">
+            
+        </div><!-- end filter-bar -->
+        <div class="row">
+            <div class="col-lg-8 mb-5">
+                <div class="row">
+                    @foreach (var item in Model.Exam.Items)
+                    {
+                        <partial name="_ExamItem" model="item" />
+                    }
+                </div><!-- end row -->
+               <partial name="_Pager" model="Model.Exam" />
+            </div><!-- end col-lg-8 -->
+           
+    </div><!-- end container -->
+</section><!-- end courses-area -->
+<!--======================================
+        END COURSE AREA
+======================================-->
